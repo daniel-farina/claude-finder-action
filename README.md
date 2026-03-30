@@ -35,21 +35,12 @@ killall Finder
 
 - macOS
 - [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed and available as `claude` in your PATH
-- [iTerm2](https://iterm2.com/) (default terminal used by the actions)
 
-## Using a different terminal
+## Terminal support
 
-The workflows use iTerm by default. To switch to Terminal.app or another terminal, edit the AppleScript inside each `.wflow` file or open them in Automator and change the shell script.
-
-**Terminal.app** alternative script:
-```bash
-osascript -e "
-    tell application \"Terminal\"
-        activate
-        do script \"cd '${dir}' && claude\"
-    end tell
-"
-```
+The actions auto-detect your terminal:
+- **iTerm2** - used if `/Applications/iTerm.app` exists
+- **Terminal.app** - used as fallback
 
 ## License
 

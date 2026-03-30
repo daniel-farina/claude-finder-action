@@ -61,15 +61,24 @@
     else
         dir="$(dirname "$f")"
     fi
-    osascript -e "
-        tell application \"iTerm\"
-            activate
-            create window with default profile
-            tell current session of current window
-                write text \"cd '${dir}' &amp;&amp; claude\"
+    if [ -d "/Applications/iTerm.app" ]; then
+        osascript -e "
+            tell application \"iTerm\"
+                activate
+                create window with default profile
+                tell current session of current window
+                    write text \"cd '${dir}' &amp;&amp; claude\"
+                end tell
             end tell
-        end tell
-    "
+        "
+    else
+        osascript -e "
+            tell application \"Terminal\"
+                activate
+                do script \"cd '${dir}' &amp;&amp; claude\"
+            end tell
+        "
+    fi
 done</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>

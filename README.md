@@ -1,8 +1,6 @@
 # Claude Finder Action
 
 
-<img width="508" height="198" alt="image" src="https://github.com/user-attachments/assets/3caf05aa-6be0-414d-86e2-54dfa78077ac" />
-
 
 Add "Open with Claude" to the macOS Finder right-click menu. Opens a terminal window, `cd`s into the selected folder, and launches Claude Code CLI.
 
@@ -23,6 +21,11 @@ cd claude-finder-action
 chmod +x install.sh && ./install.sh
 killall Finder
 ```
+
+
+
+<img width="508" height="198" alt="image" src="https://github.com/user-attachments/assets/3caf05aa-6be0-414d-86e2-54dfa78077ac" />
+
 
 ## Uninstall
 
